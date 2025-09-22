@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6rxfktsfiauk"]
+
+[ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dn8dwm8opwq6a" path="res://scenes/character.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://duegu6skyyea1" path="res://scenes/Dialogue Boxes.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://mymtfebima11" path="res://scripts/toggle.gd" id="4_jyhfs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_o5qli")
+
+[node name="Character" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(1607, 635)
+scale = Vector2(2.5, 2.5)
+
+[node name="Dialogue" parent="." instance=ExtResource("3_sugp2")]
+offset_left = -22.0
+offset_top = 1023.0
+offset_right = -22.0
+offset_bottom = 1023.0
+
+[node name="Toggle" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 417.0
+offset_right = 99.0
+offset_bottom = 662.0
+script = ExtResource("4_jyhfs")
