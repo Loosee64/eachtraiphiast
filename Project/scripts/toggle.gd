@@ -1,12 +1,7 @@
 extends Button
 
-
-
-
-
-	
-	
-
+signal hideObject
+signal showObject
 
 func _on_pressed() -> void:
 	if get_node("../Player").get_child(0).visible == true:
@@ -15,9 +10,12 @@ func _on_pressed() -> void:
 	
 		get_node("../NPC").get_child(0).hide()
 		get_node("../NPC").get_child(1).hide()
+		
+		hideObject.emit()
 	else:
 		get_node("../Player").get_child(0).show()
 		get_node("../Player").get_child(1).show()
 	
 		get_node("../NPC").get_child(0).show()
 		get_node("../NPC").get_child(1).show()
+		showObject.emit()
