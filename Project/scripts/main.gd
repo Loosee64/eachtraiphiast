@@ -6,3 +6,4 @@ func _on_toggle_local_hide() -> void:
 
 func _on_toggle_local_show() -> void:
 	ToggleMessage.SHOW_DIALOGUE.emit()
+	
