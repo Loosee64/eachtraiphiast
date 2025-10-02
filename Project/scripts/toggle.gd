@@ -1,21 +1,14 @@
 extends Button
 
-signal hideObject
-signal showObject
+var visibleUI = true
+
+signal localHide
+signal localShow
 
 func _on_pressed() -> void:
-	if get_node("../Player").get_child(0).visible == true:
-		get_node("../Player").get_child(0).hide()
-		get_node("../Player").get_child(1).hide()
-	
-		get_node("../NPC").get_child(0).hide()
-		get_node("../NPC").get_child(1).hide()
-		
-		hideObject.emit()
+	if visibleUI:
+		localHide.emit()
+		visibleUI = false
 	else:
-		get_node("../Player").get_child(0).show()
-		get_node("../Player").get_child(1).show()
-	
-		get_node("../NPC").get_child(0).show()
-		get_node("../NPC").get_child(1).show()
-		showObject.emit()
+		localShow.emit()
+		visibleUI = true

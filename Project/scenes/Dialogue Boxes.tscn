@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://duegu6skyyea1"]
 
-[ext_resource type="Script" uid="uid://mymtfebima11" path="res://scripts/toggle.gd" id="1_r422u"]
+[ext_resource type="Script" uid="uid://dr6ee35hc4nj2" path="res://scripts/dialogue_boxes.gd" id="1_r422u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vidaj"]
 bg_color = Color(0.293747, 0.611408, 0.960178, 1)
@@ -19,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("1_r422u")
 
 [node name="Player" type="Node" parent="."]
 
@@ -71,13 +72,3 @@ theme = SubResource("Theme_jwyou")
 layout_mode = 2
 text = "NPC"
 label_settings = SubResource("LabelSettings_3n4vj")
-
-[node name="Toggle" type="Button" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_top = -659.0
-offset_right = 107.0
-offset_bottom = -389.0
-script = ExtResource("1_r422u")
-
-[connection signal="pressed" from="Toggle" to="Toggle" method="_on_pressed"]
