@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://duegu6skyyea1"]
+[gd_scene load_steps=6 format=3 uid="uid://duegu6skyyea1"]
 
 [ext_resource type="Script" uid="uid://dr6ee35hc4nj2" path="res://scripts/dialogue_boxes.gd" id="1_r422u"]
+[ext_resource type="PackedScene" uid="uid://dmhbi4o8yoxv0" path="res://scenes/balloon.tscn" id="2_c5v2u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vidaj"]
 bg_color = Color(0.293747, 0.611408, 0.960178, 1)
@@ -72,3 +73,5 @@ theme = SubResource("Theme_jwyou")
 layout_mode = 2
 text = "NPC"
 label_settings = SubResource("LabelSettings_3n4vj")
+
+[node name="ExampleBalloon" parent="." instance=ExtResource("2_c5v2u")]

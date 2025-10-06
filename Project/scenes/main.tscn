@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=11 format=3 uid="uid://b6rxfktsfiauk"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://deece2n3be13j" path="res://scripts/camera_2d.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://uo6dv83abgou" path="res://scenes/object.tscn" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://cy5x1tx8mok3x" path="res://assets/sheep.webp" id="9_85g3d"]
 
 [sub_resource type="GDScript" id="GDScript_o6xl0"]
 script/source = "extends Button
@@ -63,8 +64,16 @@ script = ExtResource("7_tipki")
 
 [node name="Objects" type="Node" parent="."]
 
-[node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(595, 397)
+[node name="Object" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(392, 434)
+
+[node name="TextureRect" type="TextureRect" parent="Object"]
+offset_left = -69.0
+offset_top = -69.0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("9_85g3d")
+expand_mode = 2
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]
