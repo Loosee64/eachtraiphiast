@@ -64,12 +64,10 @@ script = ExtResource("7_tipki")
 [node name="Objects" type="Node" parent="."]
 
 [node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(466, 412)
+position = Vector2(595, 397)
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]
 [connection signal="localShow" from="Toggle" to="." method="_on_toggle_local_show"]
 [connection signal="localShow" from="Toggle" to="CameraManager" method="_on_toggle_local_show"]
 [connection signal="pressed" from="Toggle" to="Toggle" method="_on_pressed"]
-[connection signal="object_picked" from="Objects/Object" to="." method="_on_object_object_picked"]
-[connection signal="object_picked" from="Objects/Object" to="Inventory" method="_on_object_object_picked"]
