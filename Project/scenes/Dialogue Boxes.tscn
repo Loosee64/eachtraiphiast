@@ -74,4 +74,4 @@ layout_mode = 2
 text = "NPC"
 label_settings = SubResource("LabelSettings_3n4vj")
 
-[node name="ExampleBalloon" parent="." instance=ExtResource("2_c5v2u")]
+[node name="Main Dialogue" parent="." instance=ExtResource("2_c5v2u")]

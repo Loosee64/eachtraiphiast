@@ -51,6 +51,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+@onready var phist_sprite: AnimatedSprite2D = $Balloon/MarginContainer/AnimatedSprite2D
 
 func _ready() -> void:
 	balloon.hide()
@@ -97,6 +98,14 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	if dialogue_line.character.to_lower() == "phist":
+		phist_sprite.visible = true
+		if dialogue_line.get_tag_value("mood") == "happy":
+			phist_sprite.set_frame(4)
+		elif dialogue_line.get_tag_value("mood") == "angry":
+			phist_sprite.set_frame(2)
+	else:
+		phist_sprite.visible = false
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

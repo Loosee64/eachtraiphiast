@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmhbi4o8yoxv0"]
+[gd_scene load_steps=17 format=3 uid="uid://dmhbi4o8yoxv0"]
 
 [ext_resource type="Script" uid="uid://bkmjtyf1eih2o" path="res://scenes/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://b3espdhikp54q" path="res://assets/phist.webp" id="3_u045a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,6 +64,56 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0o5a"]
+atlas = ExtResource("3_u045a")
+region = Rect2(1598, 0, 799, 848)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i80d5"]
+atlas = ExtResource("3_u045a")
+region = Rect2(799, 0, 799, 848)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsek3"]
+atlas = ExtResource("3_u045a")
+region = Rect2(0, 0, 799, 848)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvj2v"]
+atlas = ExtResource("3_u045a")
+region = Rect2(0, 848, 799, 848)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8copa"]
+atlas = ExtResource("3_u045a")
+region = Rect2(799, 848, 799, 848)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc4cd"]
+atlas = ExtResource("3_u045a")
+region = Rect2(1598, 848, 799, 848)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4oq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0o5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i80d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsek3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvj2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8copa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc4cd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -113,6 +164,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Balloon/MarginContainer"]
+position = Vector2(318, -281)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_x4oq6")
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
