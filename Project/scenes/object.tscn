@@ -1,10 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://uo6dv83abgou"]
+[gd_scene load_steps=6 format=3 uid="uid://uo6dv83abgou"]
 
 [ext_resource type="Script" uid="uid://c3ynu52vsw74p" path="res://scripts/object.gd" id="1_cbfvs"]
 [ext_resource type="Texture2D" uid="uid://cy5x1tx8mok3x" path="res://assets/sheep.webp" id="2_cbfvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egkf8"]
 size = Vector2(138.5, 130.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbfvs"]
+atlas = ExtResource("2_cbfvs")
+region = Rect2(0, 0, 1678, 1678)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0y2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbfvs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_cbfvs")
@@ -13,10 +28,7 @@ script = ExtResource("1_cbfvs")
 position = Vector2(-7.25, -0.375)
 shape = SubResource("RectangleShape2D_egkf8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -69.0
-offset_top = -69.0
-offset_right = 69.0
-offset_bottom = 69.0
-texture = ExtResource("2_cbfvs")
-expand_mode = 2
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.99999, -1.00001)
+scale = Vector2(0.0822408, 0.0786651)
+sprite_frames = SubResource("SpriteFrames_a0y2b")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=17 format=3 uid="uid://b6rxfktsfiauk"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://deece2n3be13j" path="res://scripts/camera_2d.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://ui7mqm2fu84" path="res://scripts/superobject.gd" id="6_tipki"]
 [ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="7_tipki"]
 [ext_resource type="Texture2D" uid="uid://b460bftf2qdvg" path="res://assets/guy.webp" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://uo6dv83abgou" path="res://scenes/object.tscn" id="8_tipki"]
@@ -111,6 +112,7 @@ script = ExtResource("7_tipki")
 skip_action = &"ui_accept"
 
 [node name="Objects" type="Node" parent="."]
+script = ExtResource("6_tipki")
 
 [node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
 position = Vector2(1057, 145)
