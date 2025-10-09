@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=16 format=3 uid="uid://b6rxfktsfiauk"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
@@ -6,14 +6,13 @@
 [ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="7_tipki"]
 [ext_resource type="Texture2D" uid="uid://b460bftf2qdvg" path="res://assets/guy.webp" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://uo6dv83abgou" path="res://scenes/object.tscn" id="8_tipki"]
-[ext_resource type="Texture2D" uid="uid://cy5x1tx8mok3x" path="res://assets/sheep.webp" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dmhbi4o8yoxv0" path="res://scenes/balloon.tscn" id="9_choun"]
 
 [sub_resource type="GDScript" id="GDScript_o6xl0"]
 script/source = "extends Button
 
 var visibleUI = true
-#@onready var dialogue: CanvasLayer = $\"../Dialogue\"
+@onready var dialogue: CanvasLayer = $\"../Dialogue\"
 @onready var character: Node2D = $\"../Character\"
 var dialogueResource = load(\"res://test.dialogue\")
 
@@ -24,11 +23,13 @@ func _on_pressed() -> void:
 	if visibleUI:
 		character.hide()
 		visibleUI = false
-		#DialogueManager.dialogue_ended.emit(dialogueResource)
+		DialogueManager.dialogue_ended.emit(dialogueResource)
 	else:
 		character.show()
 		visibleUI = true
-		#DialogueManager.show_dialogue_balloon(dialogueResource, \"start\")
+		DialogueManager.show_dialogue_balloon(dialogueResource, \"start\")
+		
+		
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
@@ -87,6 +88,7 @@ script = ExtResource("1_o6xl0")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("1_o5qli")
 
 [node name="CameraManager" type="Node2D" parent="."]
@@ -112,14 +114,6 @@ skip_action = &"ui_accept"
 
 [node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
 position = Vector2(1057, 145)
-
-[node name="TextureRect" type="TextureRect" parent="Objects/Object"]
-offset_left = -69.0
-offset_top = -69.0
-offset_right = 69.0
-offset_bottom = 69.0
-texture = ExtResource("9_85g3d")
-expand_mode = 2
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
 position = Vector2(1636, 600)

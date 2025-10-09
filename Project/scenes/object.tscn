@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://uo6dv83abgou"]
+[gd_scene load_steps=4 format=3 uid="uid://uo6dv83abgou"]
 
 [ext_resource type="Script" uid="uid://c3ynu52vsw74p" path="res://scripts/object.gd" id="1_cbfvs"]
+[ext_resource type="Texture2D" uid="uid://cy5x1tx8mok3x" path="res://assets/sheep.webp" id="2_cbfvs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qvdj"]
-size = Vector2(138, 139)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egkf8"]
+size = Vector2(138.5, 130.75)
 
-[node name="Object" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_cbfvs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_6qvdj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.25, -0.375)
+shape = SubResource("RectangleShape2D_egkf8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -69.0
+offset_top = -69.0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("2_cbfvs")
+expand_mode = 2
