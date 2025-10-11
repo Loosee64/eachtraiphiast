@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func on_local_object_picked(id: Variant) -> void:
 	inventoryArray.append(id)
-	print(id + " added to inventory")
+	print(str(id) + " added to inventory")
