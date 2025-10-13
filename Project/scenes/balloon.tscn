@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmhbi4o8yoxv0"]
+[gd_scene load_steps=20 format=3 uid="uid://dmhbi4o8yoxv0"]
 
 [ext_resource type="Script" uid="uid://bkmjtyf1eih2o" path="res://scripts/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://v38a2gkvuly4" path="res://assets/Phiast Box.png" id="3_m0o5a"]
 [ext_resource type="Texture2D" uid="uid://b3espdhikp54q" path="res://assets/phist.webp" id="3_u045a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -63,6 +64,12 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="Theme" id="Theme_i80d5"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_m0o5a"]
+default_font_size = 40
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0o5a"]
 atlas = ExtResource("3_u045a")
@@ -140,45 +147,51 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -219.0
+offset_top = -272.0
+offset_right = -287.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer"]
-clip_children = 2
+[node name="TextureRect" type="TextureRect" parent="Balloon/MarginContainer"]
 layout_mode = 2
-mouse_filter = 2
+texture = ExtResource("3_m0o5a")
+expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/TextureRect"]
 layout_mode = 2
-mouse_filter = 2
+offset_left = 63.0
+offset_top = 10.0
+offset_right = 1485.0
+offset_bottom = 100.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/TextureRect"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
-mouse_filter = 2
+offset_left = 86.0
+offset_top = 15.0
+offset_right = 1448.0
+offset_bottom = 57.0
+mouse_filter = 1
+theme = SubResource("Theme_i80d5")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
+vertical_alignment = 1
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/TextureRect" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+offset_left = 88.0
+offset_top = 56.0
+offset_right = 646.0
+offset_bottom = 195.0
 size_flags_vertical = 3
-mouse_filter = 2
+theme = SubResource("Theme_m0o5a")
 text = "Dialogue..."
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Balloon/MarginContainer"]
-position = Vector2(318, -281)
-scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_x4oq6")
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
@@ -188,14 +201,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -35.0
-offset_right = 290.5
-offset_bottom = 35.0
+offset_left = -249.0
+offset_top = -278.5
+offset_right = 332.0
+offset_bottom = -208.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
-mouse_filter = 2
 theme_override_constants/separation = 2
 alignment = 1
 script = ExtResource("3_72ixx")
@@ -203,8 +215,13 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
-mouse_filter = 2
+mouse_filter = 1
 text = "Response example"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Balloon"]
+position = Vector2(318, -58)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_x4oq6")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
