@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://du30dojv7fowx"]
+
+[ext_resource type="Texture2D" uid="uid://bgr8hc84hes26" path="res://assets/inventory.png" id="1_hj2ta"]
+[ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="2_ty45s"]
+[ext_resource type="Script" uid="uid://hf1028ye74dy" path="res://scripts/inventoryobject.gd" id="3_ty45s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53g1v"]
+size = Vector2(126.125, 132)
+
+[node name="Inventory" type="TextureRect"]
+offset_left = 1208.0
+offset_top = 40.0
+offset_right = 2195.0
+offset_bottom = 944.0
+texture = ExtResource("1_hj2ta")
+expand_mode = 1
+script = ExtResource("2_ty45s")
+
+[node name="Object" type="Area2D" parent="."]
+script = ExtResource("3_ty45s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+position = Vector2(492, 178)
+shape = SubResource("RectangleShape2D_53g1v")
+
+[node name="TextureRect" type="TextureRect" parent="Object"]
+offset_left = 429.0
+offset_top = 113.0
+offset_right = 556.0
+offset_bottom = 245.0
+expand_mode = 1
+
+[node name="Object2" type="Area2D" parent="."]
+position = Vector2(1, 142)
+script = ExtResource("3_ty45s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
+position = Vector2(492, 178)
+shape = SubResource("RectangleShape2D_53g1v")
+
+[node name="TextureRect" type="TextureRect" parent="Object2"]
+offset_left = 429.0
+offset_top = 113.0
+offset_right = 556.0
+offset_bottom = 245.0
+expand_mode = 1
+
+[node name="Object3" type="Area2D" parent="."]
+position = Vector2(0, 287)
+script = ExtResource("3_ty45s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object3"]
+position = Vector2(492, 178)
+shape = SubResource("RectangleShape2D_53g1v")
+
+[node name="TextureRect" type="TextureRect" parent="Object3"]
+offset_left = 429.0
+offset_top = 113.0
+offset_right = 556.0
+offset_bottom = 245.0
+expand_mode = 1
+
+[node name="Object4" type="Area2D" parent="."]
+position = Vector2(1, 429)
+script = ExtResource("3_ty45s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object4"]
+position = Vector2(492, 178)
+shape = SubResource("RectangleShape2D_53g1v")
+
+[node name="TextureRect" type="TextureRect" parent="Object4"]
+offset_left = 429.0
+offset_top = 113.0
+offset_right = 556.0
+offset_bottom = 245.0
+expand_mode = 1
+
+[node name="Object5" type="Area2D" parent="."]
+position = Vector2(-4, 578)
+script = ExtResource("3_ty45s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object5"]
+position = Vector2(492, 178)
+shape = SubResource("RectangleShape2D_53g1v")
+
+[node name="TextureRect" type="TextureRect" parent="Object5"]
+offset_left = 429.0
+offset_top = 113.0
+offset_right = 556.0
+offset_bottom = 245.0
+expand_mode = 1
+
+[connection signal="item_used" from="Object" to="." method="_on_object_item_used"]
+[connection signal="item_used" from="Object2" to="." method="_on_object_item_used"]
+[connection signal="item_used" from="Object3" to="." method="_on_object_item_used"]
+[connection signal="item_used" from="Object4" to="." method="_on_object_item_used"]
+[connection signal="item_used" from="Object5" to="." method="_on_object_item_used"]

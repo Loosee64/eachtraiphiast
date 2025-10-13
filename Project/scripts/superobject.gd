@@ -1,6 +1,6 @@
 extends Node
 
 func _ready() -> void:
-	for i in range(3):
+	for i in range(5):
 		var a = get_child(i)
 		a.initObject(i)

@@ -1,3 +1,3 @@
 extends Node
 
-var test = "yeah"
+var itemUsed = false
