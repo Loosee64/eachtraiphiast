@@ -1,25 +1,25 @@
 ~ start
 Phist: [[Hi|Hello|Dia duit]], it is dark. I know I must do this every year, but it’s still kind of creepy... oh... I think I hear someone. [#mood=calm]
 
-Balor: Who goes there... and what do you want?
+Balor: Who goes there... and what do you want?[#npcmood=calm]
 
 Phist: Dia duit, Phist is ainm dom. I am making my way to the surface — can you help me? Más é do thoil é. [#mood=happy]
 
-Balor: The surface... you are a long way from there.
+Balor: The surface... you are a long way from there.[#npcmood=stern]
 
 Phist: Yes, it is a long journey. Can you help me get to the next layer?[#mood=stern]
 
-Balor: I can help, but first you must do something for me.  
+Balor: I can help, but first you must do something for me.  [#npcmood=calm]
 I have lost something important — my *scian*.  
 If you can find this and bring it to me, I will help you get to the next layer.  
-Will you accept this quest?
+Will you accept this quest?[#npcmood=blush]
 
 - Yes
 	Phist: I accept. I won't let you down! [#mood=calm]
 	=> searching
 - No
 	Phist: No, I don't want to help. [#mood=angry]
-	Balor: ...That’s the only way I can help. Come back to me if you change your mind.
+	Balor: ...That’s the only way I can help. Come back to me if you change your mind.[#npcmood=happy]
 	=> END
 
 
@@ -42,12 +42,12 @@ Phist: I think I am ready to show Balor.
 ~ found_scian
 Phist: I have found it. [#mood=happy]
 
-Balor: Show me.
+Balor: Show me.[#npcmood=angry]
 
 Phist: Here you go. [#mood=blush]
 
-Balor: You found it — *Mo scian*. Go raibh maith agat.  
-As you fulfilled your side, I will fulfil mine.
+Balor: You found it — *Mo scian*. Go raibh maith agat.[#npcmood=stern]  
+As you fulfilled your side, I will fulfil mine.[#npcmood=shock]
 
 Phist: So, will you help me get to the next layer? [#mood=happy]
 

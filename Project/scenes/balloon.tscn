@@ -71,17 +71,17 @@ default_font_size = 25
 [sub_resource type="Theme" id="Theme_m0o5a"]
 default_font_size = 40
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0o5a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsek3"]
 atlas = ExtResource("3_u045a")
-region = Rect2(1598, 0, 799, 848)
+region = Rect2(0, 0, 799, 848)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i80d5"]
 atlas = ExtResource("3_u045a")
 region = Rect2(799, 0, 799, 848)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsek3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0o5a"]
 atlas = ExtResource("3_u045a")
-region = Rect2(0, 0, 799, 848)
+region = Rect2(1598, 0, 799, 848)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvj2v"]
 atlas = ExtResource("3_u045a")
@@ -99,13 +99,13 @@ region = Rect2(1598, 848, 799, 848)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m0o5a")
+"texture": SubResource("AtlasTexture_hsek3")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i80d5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hsek3")
+"texture": SubResource("AtlasTexture_m0o5a")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kvj2v")
