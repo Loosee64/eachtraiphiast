@@ -1,0 +1,73 @@
+~ start
+Phist: [[Hi|Hello|Dia duit]]  [#mood=stern]
+
+Puca: Heeeeeheheeeeee  [#npcmood=calm]
+
+Phist: Huh? Ce ata ann? 
+
+Puca: Who am i ? Who are you? I was here before you?  
+
+Phist: Dia duit, phist is ainm dom , I am making my way to the surface, can you help me?  Más é do thoil é. 
+
+Puca: Phist....phist ....phist... How can i trust you? 
+
+Phist: The Balor told me to say "bhí sé ina chara maith agam"
+
+Puca: Puca is ainm dom. cén fáth a bhfuil tú anseo? 
+
+Phist: I am here to make my way to the serface. Please help me get to the next layer. 
+
+Puca:  Mmmmhhmmm help you? Help me first. I have lost something while causeing some trouble. Its time i return it. Aimsigh an Mhuc . Muc. That is what you are looking for, mo Chara. 
+
+Phist: An Mhuc ...Muc.   
+
+ Puca: Will you help me? 
+
+- Yes
+	Phist: I accept. I won't let you down! [#mood=calm]
+	Puca: ádh mór
+	=> searching
+- No
+	Phist: No, I don't want to help. [#mood=angry]
+	Puca:This is the only way so come back when you realise. [#npcmood=happy]
+	=> END
+
+
+~ searching
+Phist: [I don' know. [#mood=stern]|Maybe this is right[#mood=calm]|Is this a muc?[#mood=angry]|This isn't rightt...maybe...[#mood=calm]This is a Muc ,  i am sure...mostly   [#mood=happy]] 
+
+Phist: I think I am ready to show the Puca.
+
+- Yes
+	=> found_muc
+- No
+	Phist: I need more time to think.[#mood=calm]
+	=> searching
+- Start again
+	=> start
+- End the conversation
+	=> END
+
+
+~ found_muc
+Phist:I think I have it. [#mood=happy]
+
+Puca: Let's see if you are right.[#npcmood=angry]
+
+Phist: Here it is. [#mood=blush]
+
+Puca:Thats it — *muc an fheirmeora*. Go raibh maith agat.[#npcmood=stern]  
+It is time for me to help you back.[#npcmood=shock]
+
+Phist: I am happy to help. [#mood=happy]
+
+Puca: Here is the portal to the next layer. 
+Go above and say *“tá sé cabhrach agus iontaofa”* and they will help.  
+Ádh mór agus slán leat.
+
+- Start again
+	=> start
+- End the conversation
+	=> END
+
+=> END
