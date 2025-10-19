@@ -28,3 +28,5 @@ shape = SubResource("RectangleShape2D_egkf8")
 position = Vector2(-3.33786e-06, -0.50001)
 scale = Vector2(0.2, 0.188)
 sprite_frames = SubResource("SpriteFrames_cbfvs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

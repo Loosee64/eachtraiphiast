@@ -1,11 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://du30dojv7fowx"]
+[gd_scene load_steps=14 format=3 uid="uid://du30dojv7fowx"]
 
 [ext_resource type="Texture2D" uid="uid://bgr8hc84hes26" path="res://assets/inventory.png" id="1_hj2ta"]
 [ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="2_ty45s"]
 [ext_resource type="Script" uid="uid://hf1028ye74dy" path="res://scripts/inventoryobject.gd" id="3_ty45s"]
+[ext_resource type="Script" uid="uid://ds2crgkqus3he" path="res://scripts/play_sound.gd" id="4_uae8j"]
+[ext_resource type="Texture2D" uid="uid://b7t1oq3rmst1l" path="res://assets/audiosprite.png" id="4_yyk2a"]
+[ext_resource type="AudioStream" uid="uid://fthm17x2yb52" path="res://assets/Scian .mp3" id="5_uae8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53g1v"]
 size = Vector2(126.125, 132)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s887n"]
+radius = 67.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g71ie"]
+atlas = ExtResource("4_yyk2a")
+region = Rect2(0, 0, 186, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr8g6"]
+atlas = ExtResource("4_yyk2a")
+region = Rect2(186, 0, 186, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7iul"]
+atlas = ExtResource("4_yyk2a")
+region = Rect2(372, 0, 186, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td2ew"]
+atlas = ExtResource("4_yyk2a")
+region = Rect2(558, 0, 186, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylenm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g71ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr8g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7iul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td2ew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Inventory" type="TextureRect"]
 offset_left = 1208.0
@@ -17,6 +59,7 @@ expand_mode = 1
 script = ExtResource("2_ty45s")
 
 [node name="Object" type="Area2D" parent="."]
+position = Vector2(-85, 4)
 script = ExtResource("3_ty45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
@@ -30,8 +73,23 @@ offset_right = 556.0
 offset_bottom = 245.0
 expand_mode = 1
 
+[node name="PlaySound" type="Area2D" parent="Object"]
+visible = false
+position = Vector2(639, 178)
+script = ExtResource("4_uae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object/PlaySound"]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_s887n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Object/PlaySound"]
+sprite_frames = SubResource("SpriteFrames_ylenm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object/PlaySound"]
+stream = ExtResource("5_uae8j")
+
 [node name="Object2" type="Area2D" parent="."]
-position = Vector2(1, 142)
+position = Vector2(-88, 150)
 script = ExtResource("3_ty45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
@@ -45,8 +103,23 @@ offset_right = 556.0
 offset_bottom = 245.0
 expand_mode = 1
 
+[node name="PlaySound" type="Area2D" parent="Object2"]
+visible = false
+position = Vector2(639, 178)
+script = ExtResource("4_uae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object2/PlaySound"]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_s887n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Object2/PlaySound"]
+sprite_frames = SubResource("SpriteFrames_ylenm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object2/PlaySound"]
+stream = ExtResource("5_uae8j")
+
 [node name="Object3" type="Area2D" parent="."]
-position = Vector2(0, 287)
+position = Vector2(-84, 300)
 script = ExtResource("3_ty45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object3"]
@@ -60,8 +133,23 @@ offset_right = 556.0
 offset_bottom = 245.0
 expand_mode = 1
 
+[node name="PlaySound" type="Area2D" parent="Object3"]
+visible = false
+position = Vector2(639, 178)
+script = ExtResource("4_uae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object3/PlaySound"]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_s887n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Object3/PlaySound"]
+sprite_frames = SubResource("SpriteFrames_ylenm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object3/PlaySound"]
+stream = ExtResource("5_uae8j")
+
 [node name="Object4" type="Area2D" parent="."]
-position = Vector2(1, 429)
+position = Vector2(-84, 441)
 script = ExtResource("3_ty45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object4"]
@@ -75,8 +163,23 @@ offset_right = 556.0
 offset_bottom = 245.0
 expand_mode = 1
 
+[node name="PlaySound" type="Area2D" parent="Object4"]
+visible = false
+position = Vector2(639, 178)
+script = ExtResource("4_uae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object4/PlaySound"]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_s887n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Object4/PlaySound"]
+sprite_frames = SubResource("SpriteFrames_ylenm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object4/PlaySound"]
+stream = ExtResource("5_uae8j")
+
 [node name="Object5" type="Area2D" parent="."]
-position = Vector2(-4, 578)
+position = Vector2(-84, 586)
 script = ExtResource("3_ty45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object5"]
@@ -90,8 +193,29 @@ offset_right = 556.0
 offset_bottom = 245.0
 expand_mode = 1
 
+[node name="PlaySound" type="Area2D" parent="Object5"]
+visible = false
+position = Vector2(639, 178)
+script = ExtResource("4_uae8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object5/PlaySound"]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_s887n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Object5/PlaySound"]
+sprite_frames = SubResource("SpriteFrames_ylenm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object5/PlaySound"]
+stream = ExtResource("5_uae8j")
+
+[connection signal="item_picked" from="Object" to="Object/PlaySound" method="_on_object_item_picked"]
 [connection signal="item_used" from="Object" to="." method="_on_object_item_used"]
+[connection signal="finished" from="Object/PlaySound/AudioStreamPlayer" to="Object/PlaySound" method="_on_audio_stream_player_finished"]
 [connection signal="item_used" from="Object2" to="." method="_on_object_item_used"]
+[connection signal="finished" from="Object2/PlaySound/AudioStreamPlayer" to="Object2/PlaySound" method="_on_audio_stream_player_finished"]
 [connection signal="item_used" from="Object3" to="." method="_on_object_item_used"]
+[connection signal="finished" from="Object3/PlaySound/AudioStreamPlayer" to="Object3/PlaySound" method="_on_audio_stream_player_finished"]
 [connection signal="item_used" from="Object4" to="." method="_on_object_item_used"]
+[connection signal="finished" from="Object4/PlaySound/AudioStreamPlayer" to="Object4/PlaySound" method="_on_audio_stream_player_finished"]
 [connection signal="item_used" from="Object5" to="." method="_on_object_item_used"]
+[connection signal="finished" from="Object5/PlaySound/AudioStreamPlayer" to="Object5/PlaySound" method="_on_audio_stream_player_finished"]

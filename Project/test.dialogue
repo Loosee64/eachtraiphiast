@@ -10,7 +10,7 @@ Balor: The surface... you are a long way from there.[#npcmood=stern]
 Phist: Yes, it is a long journey. Can you help me get to the next layer?[#mood=stern]
 
 Balor: I can help, but first you must do something for me.  [#npcmood=calm]
-I have lost something important — my *scian*.  
+I have lost something important — [do! GameState.object_sound()]my *scian*.
 If you can find this and bring it to me, I will help you get to the next layer.  
 Will you accept this quest?[#npcmood=blush]
 
