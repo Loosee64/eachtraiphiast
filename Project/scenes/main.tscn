@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=28 format=3 uid="uid://b6rxfktsfiauk"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
@@ -12,19 +12,23 @@
 [ext_resource type="Texture2D" uid="uid://csmsliywm7i8x" path="res://assets/inventoryopen.png" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://d1dpqgf6k35ic" path="res://scripts/inventory_button.gd" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://du30dojv7fowx" path="res://scenes/inventory.tscn" id="11_ya4ey"]
-[ext_resource type="AudioStream" uid="uid://fthm17x2yb52" path="res://assets/Scian .mp3" id="13_a8y0u"]
-[ext_resource type="AudioStream" uid="uid://cyddjsm4alye3" path="res://assets/Pota.mp3" id="14_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://lcdstposwu2w" path="res://assets/Knife.mp3" id="13_trceg"]
 
 [sub_resource type="GDScript" id="GDScript_o6xl0"]
 script/source = "extends Button
 
-var visibleUI = true
+var visibleUI = false
 @onready var dialogue: CanvasLayer = $\"../Dialogue\"
 @onready var character: Node2D = $\"../Character\"
-var dialogueResource = load(\"res://test.dialogue\")
+@onready var filepath: Label = $\"../Filepath\"
+
+var dialogueResource
 
 signal localHide
 signal localShow
+
+func _ready() -> void:
+	dialogueResource = load(filepath.text)
 
 func _on_pressed() -> void:
 	if visibleUI:
@@ -176,6 +180,7 @@ position = Vector2(728, 556)
 position = Vector2(1199, 463)
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(1617, 591)
 scale = Vector2(2.374, 2.235)
 sprite_frames = SubResource("SpriteFrames_jbj1t")
@@ -206,19 +211,26 @@ offset_bottom = 876.0
 [node name="Sound Buffers" type="Node" parent="."]
 
 [node name="Object1AudioBuffer" type="AudioStreamPlayer" parent="Sound Buffers"]
-stream = ExtResource("13_a8y0u")
+stream = ExtResource("13_trceg")
 
 [node name="Object2AudioBuffer" type="AudioStreamPlayer" parent="Sound Buffers"]
-stream = ExtResource("14_jkv2x")
+stream = ExtResource("13_trceg")
 
 [node name="Object3AudioBuffer" type="AudioStreamPlayer" parent="Sound Buffers"]
-stream = ExtResource("14_jkv2x")
+stream = ExtResource("13_trceg")
 
 [node name="Object4AudioBuffer" type="AudioStreamPlayer" parent="Sound Buffers"]
-stream = ExtResource("13_a8y0u")
+stream = ExtResource("13_trceg")
 
 [node name="Object5AudioBuffer" type="AudioStreamPlayer" parent="Sound Buffers"]
-stream = ExtResource("13_a8y0u")
+stream = ExtResource("13_trceg")
+
+[node name="Filepath" type="Label" parent="."]
+offset_left = 1098.0
+offset_top = 2106.0
+offset_right = 1138.0
+offset_bottom = 2129.0
+text = "res://test.dialogue"
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]

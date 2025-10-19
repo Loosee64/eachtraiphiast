@@ -5,11 +5,19 @@ var objectID = -1
 @onready var animation_buffer: AnimatedSprite2D = $"../../Animation Buffer"
 @onready var sound_buffers: Node = $"../../Sound Buffers"
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var filepath: Label = $"../../Filepath"
+var dialogueResource
+
+func _ready() -> void:
+	dialogueResource = load(filepath.text)
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		InventorySignals.NEW_ITEM.emit(objectID)
-		audio_stream_player.play(7)
+		audio_stream_player.play()
+		if objectID == 0:
+			GameState.itemFound = true
+		DialogueManager.show_dialogue_balloon(dialogueResource, "searching")
 		self.hide()
 
 func initObject(frame):

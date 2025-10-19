@@ -1,5 +1,10 @@
 ~ start
-Phist: [[Hi|Hello|Dia duit]], it is dark. I know I must do this every year, but it’s still kind of creepy... oh... I think I hear someone. [#mood=calm]
+if GameState.spoken_to == true and GameState.itemFound == false: #If spoken to already but no correct item
+	=> what_item
+elif GameState.spoken_to == true and GameState.itemFound == true: #If spoken to and have correct item
+	=> item_ready
+Phist: It is dark. I know I must do this every year, but it’s still kind of creepy... [#npcmood=stern]
+Phist: oh... I think I hear someone. [#mood=calm]
 
 Balor: Who goes there... and what do you want?[#npcmood=calm]
 
@@ -7,16 +12,18 @@ Phist: Dia duit, Phist is ainm dom. I am making my way to the surface — can yo
 
 Balor: The surface... you are a long way from there.[#npcmood=stern]
 
-Phist: Yes, it is a long journey. Can you help me get to the next layer?[#mood=stern]
+Phist: Yes, it is a long journey. Can you help me get to the next layer?[#mood=stern][do! GameState.set_spoken_to()]
+=> what_item
 
+~ what_item
 Balor: I can help, but first you must do something for me.  [#npcmood=calm]
-I have lost something important — [do! GameState.object_sound()]my *scian*.
-If you can find this and bring it to me, I will help you get to the next layer.  
-Will you accept this quest?[#npcmood=blush]
+Balor: I have lost something important — my *scian*.[do! GameState.object_sound()]
+Balor: If you can find this and bring it to me, I will help you get to the next layer.  
+Balor: Will you accept this quest?[#npcmood=blush]
 
 - Yes
 	Phist: I accept. I won't let you down! [#mood=calm]
-	=> searching
+	=> END
 - No
 	Phist: No, I don't want to help. [#mood=angry]
 	Balor: ...That’s the only way I can help. Come back to me if you change your mind.[#npcmood=happy]
@@ -24,17 +31,26 @@ Will you accept this quest?[#npcmood=blush]
 
 
 ~ searching
-Phist: [Is this it? [#mood=stern]|Scian... I know what that is... I think?[#mood=calm]|Ummmm... hmmmm... [#mood=angry]|It’s creepy here... I’ve got to be brave![#mood=calm]|I think I have found the scian, maybe I should show Balor. [#mood=happy]] 
+if GameState.itemFound: # If item was found
+	Phist: I think I have found the scian, maybe I should show Balor. [#mood=happy]] 
+else: #Wrong items
+	%Phist: Is this it? [#mood=stern]
+	%Phist: Scian... I know what that is... I think?[#mood=calm]
+	%Phist: Ummmm... hmmmm... [#mood=angry]
+	%Phist: It’s creepy here... I’ve got to be brave![#mood=calm]
+=> END
 
+
+~ item_ready
 Phist: I think I am ready to show Balor.
 
-- Yes
+- Yes [if GameState.itemUsed]
 	=> found_scian
 - No
 	Phist: Maybe I should search a bit more... [#mood=calm]
 	=> searching
-- Start again
-	=> start
+- Let me check my bag
+	=> item_ready
 - End the conversation
 	=> END
 
@@ -47,19 +63,13 @@ Balor: Show me.[#npcmood=angry]
 Phist: Here you go. [#mood=blush]
 
 Balor: You found it — *Mo scian*. Go raibh maith agat.[#npcmood=stern]  
-As you fulfilled your side, I will fulfil mine.[#npcmood=shock]
+Balor: As you fulfilled your side, I will fulfil mine.[#npcmood=shock]
 
 Phist: So, will you help me get to the next layer? [#mood=happy]
 
 Balor: Go through this portal to the next layer.  
-Tell my old friend *“bhí sé ina chara maith agam”* and they will help.  
-Ádh mór agus slán leat.
-
-- Start again
-	=> start
-- End the conversation
-	=> END
-
+Balor: Tell my old friend *“bhí sé ina chara maith agam”* and they will help.  
+Balor: Ádh mór agus slán leat.
 => END
 
 
