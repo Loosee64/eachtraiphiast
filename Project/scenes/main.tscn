@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=34 format=3 uid="uid://b6rxfktsfiauk"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://lcdstposwu2w" path="res://assets/Knife.mp3" id="13_trceg"]
 [ext_resource type="Script" uid="uid://pjnd033clubd" path="res://scenes/portal.gd" id="14_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://bjn8vq77vft6i" path="res://assets/Portal.png" id="15_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://tb4pn85ysn5i" path="res://assets/attent irish 2.mp3" id="16_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://dd7mnc5mrmwkw" path="res://assets/good click.mp3" id="17_muem4"]
+[ext_resource type="AudioStream" uid="uid://cco18nustn5bq" path="res://assets/win.mp3" id="18_dp3eg"]
 
 [sub_resource type="GDScript" id="GDScript_o6xl0"]
 script/source = "extends Button
@@ -257,6 +260,19 @@ shape = SubResource("RectangleShape2D_muem4")
 position = Vector2(-1.00003, 66)
 scale = Vector2(0.33374, 0.362793)
 texture = ExtResource("15_jbj1t")
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_jbj1t")
+volume_db = -16.865
+autoplay = true
+parameters/looping = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_muem4")
+volume_db = -14.991
+
+[node name="Win Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_dp3eg")
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]
