@@ -1,12 +1,12 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6rxfktsfiauk"]
+[gd_scene load_steps=31 format=3 uid="uid://cfky14kqdiaip"]
 
 [ext_resource type="Texture2D" uid="uid://dqvqxdequ8q1a" path="res://assets/background1.webp" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://deece2n3be13j" path="res://scripts/camera_2d.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://ui7mqm2fu84" path="res://scripts/superobject.gd" id="6_tipki"]
 [ext_resource type="Texture2D" uid="uid://b460bftf2qdvg" path="res://assets/guy.webp" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://rqi843p6020k" path="res://assets/balorassets.png" id="8_jsxby"]
 [ext_resource type="PackedScene" uid="uid://uo6dv83abgou" path="res://scenes/object.tscn" id="8_tipki"]
-[ext_resource type="Texture2D" uid="uid://dkuewnsp0vgcd" path="res://assets/thingagain.png" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dmhbi4o8yoxv0" path="res://scenes/balloon.tscn" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://7lb800gx164e" path="res://assets/inventoryclosed.png" id="9_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://csmsliywm7i8x" path="res://assets/inventoryopen.png" id="10_eb6dy"]
@@ -37,19 +37,12 @@ func _on_pressed() -> void:
 		character.hide()
 		visibleUI = false
 		DialogueManager.dialogue_ended.emit(dialogueResource)
-		localHide.emit()
 	else:
 		character.show()
 		visibleUI = true
-		localShow.emit()
 		DialogueManager.show_dialogue_balloon(dialogueResource, \"start\")
 		
 		
-
-func set_toggle_off():
-	character.hide()
-	visibleUI = false
-	localHide.emit()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
@@ -102,43 +95,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
-atlas = ExtResource("9_85g3d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u04e"]
+atlas = ExtResource("8_jsxby")
 region = Rect2(0, 0, 1153, 1370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1t"]
-atlas = ExtResource("9_85g3d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5n8i"]
+atlas = ExtResource("8_jsxby")
 region = Rect2(1153, 0, 1153, 1370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_muem4"]
-atlas = ExtResource("9_85g3d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u6et"]
+atlas = ExtResource("8_jsxby")
 region = Rect2(2306, 0, 1153, 1370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dp3eg"]
-atlas = ExtResource("9_85g3d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5jvf"]
+atlas = ExtResource("8_jsxby")
 region = Rect2(3459, 0, 1153, 1370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ld40"]
-atlas = ExtResource("9_85g3d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkcr3"]
+atlas = ExtResource("8_jsxby")
 region = Rect2(4612, 0, 1153, 1370)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqmmt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_85g3d")
+"texture": SubResource("AtlasTexture_1u04e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jbj1t")
+"texture": SubResource("AtlasTexture_u5n8i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_muem4")
+"texture": SubResource("AtlasTexture_0u6et")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dp3eg")
+"texture": SubResource("AtlasTexture_x5jvf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ld40")
+"texture": SubResource("AtlasTexture_qkcr3")
 }],
 "loop": true,
 "name": &"default",
@@ -245,7 +238,6 @@ offset_bottom = 2129.0
 text = "res://test.dialogue"
 
 [node name="Portal" type="Area2D" parent="."]
-visible = false
 position = Vector2(952, 477)
 script = ExtResource("14_jkv2x")
 

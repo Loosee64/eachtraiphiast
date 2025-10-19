@@ -21,6 +21,7 @@ ToggleMessage="*res://scripts/ToggleMessage.gd"
 InventorySignals="*res://scripts/InventorySignals.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://scripts/GameState.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [dialogue_manager]
 

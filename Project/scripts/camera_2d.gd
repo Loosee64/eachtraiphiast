@@ -1,7 +1,7 @@
 extends Node2D
 
 var movement = 0
-var moveable = false
+var moveable = true
 
 
 

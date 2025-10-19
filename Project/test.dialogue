@@ -22,11 +22,11 @@ Balor: If you can find this and bring it to me, I will help you get to the next 
 Balor: Will you accept this quest?[#npcmood=blush]
 
 - Yes
-	Phist: I accept. I won't let you down! [#mood=calm]
+	Phist: I accept. I won't let you down! [#mood=calm][do!GameState.set_toggle()]
 	=> END
 - No
 	Phist: No, I don't want to help. [#mood=angry]
-	Balor: ...That’s the only way I can help. Come back to me if you change your mind.[#npcmood=happy]
+	Balor: ...That’s the only way I can help. Come back to me if you change your mind.[#npcmood=happy][do!GameState.set_toggle()]
 	=> END
 
 
@@ -48,11 +48,10 @@ Phist: I think I am ready to show Balor.
 	=> found_scian
 - No
 	Phist: Maybe I should search a bit more... [#mood=calm]
-	=> searching
+	[do!GameState.set_toggle()]
+	=> END
 - Let me check my bag
 	=> item_ready
-- End the conversation
-	=> END
 
 
 ~ found_scian
@@ -69,7 +68,7 @@ Phist: So, will you help me get to the next layer? [#mood=happy]
 
 Balor: Go through this portal to the next layer.  
 Balor: Tell my old friend *“bhí sé ina chara maith agam”* and they will help.  
-Balor: Ádh mór agus slán leat.
+Balor: Ádh mór agus slán leat. [do! GameState.set_portal()][do!GameState.set_toggle()]
 => END
 
 
