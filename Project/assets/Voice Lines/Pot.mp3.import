@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://y0a5g1x005n0"
+path="res://.godot/imported/Pot.mp3-4868dd0f0724f2800b59705b87fb9f5c.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Pot.mp3"
+dest_files=["res://.godot/imported/Pot.mp3-4868dd0f0724f2800b59705b87fb9f5c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

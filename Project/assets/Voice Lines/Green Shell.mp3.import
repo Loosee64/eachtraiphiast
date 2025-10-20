@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2fwku6l2gc8o"
+path="res://.godot/imported/Green Shell.mp3-527267122b1cd2ffeba56c9977966872.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Green Shell.mp3"
+dest_files=["res://.godot/imported/Green Shell.mp3-527267122b1cd2ffeba56c9977966872.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

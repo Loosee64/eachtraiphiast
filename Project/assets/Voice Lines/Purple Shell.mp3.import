@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6ld5dyt0lruu"
+path="res://.godot/imported/Purple Shell.mp3-fcb6e597e94980f1450f9c8dc9fd333d.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Purple Shell.mp3"
+dest_files=["res://.godot/imported/Purple Shell.mp3-fcb6e597e94980f1450f9c8dc9fd333d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

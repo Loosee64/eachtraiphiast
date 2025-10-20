@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ylciexi407qd"
+path="res://.godot/imported/Perfume Bottle.mp3-e734b40c438409f605f7c370a286c6bc.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Perfume Bottle.mp3"
+dest_files=["res://.godot/imported/Perfume Bottle.mp3-e734b40c438409f605f7c370a286c6bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

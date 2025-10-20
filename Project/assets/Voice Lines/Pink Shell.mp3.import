@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4bd0aabe1gpv"
+path="res://.godot/imported/Pink Shell.mp3-ca87a6413c23e86cdb8385926f191212.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Pink Shell.mp3"
+dest_files=["res://.godot/imported/Pink Shell.mp3-ca87a6413c23e86cdb8385926f191212.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

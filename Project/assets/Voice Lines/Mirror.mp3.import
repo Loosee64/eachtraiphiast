@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu4lsd50o8fr6"
+path="res://.godot/imported/Mirror.mp3-c449fd1839462ee655c8521751186ef0.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Mirror.mp3"
+dest_files=["res://.godot/imported/Mirror.mp3-c449fd1839462ee655c8521751186ef0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
