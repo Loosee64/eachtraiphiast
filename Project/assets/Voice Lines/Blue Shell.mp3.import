@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chsoo6vtm6pq1"
+path="res://.godot/imported/Blue Shell.mp3-1ef538f5cc4b3caf5bd8b44791a52b22.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Blue Shell.mp3"
+dest_files=["res://.godot/imported/Blue Shell.mp3-1ef538f5cc4b3caf5bd8b44791a52b22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

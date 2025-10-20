@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l0xii1y3y3t8"
+path="res://.godot/imported/Comb.mp3-f0b0a7f5ba713fd0eec38017096dbae5.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Comb.mp3"
+dest_files=["res://.godot/imported/Comb.mp3-f0b0a7f5ba713fd0eec38017096dbae5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

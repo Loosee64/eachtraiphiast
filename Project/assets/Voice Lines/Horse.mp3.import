@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fmj47dx7rjmt"
+path="res://.godot/imported/Horse.mp3-37bf59d7ed67706725f88bf2b59dc7f6.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Horse.mp3"
+dest_files=["res://.godot/imported/Horse.mp3-37bf59d7ed67706725f88bf2b59dc7f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

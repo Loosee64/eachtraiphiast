@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k2s38lmksre3"
+path="res://.godot/imported/Sheep.mp3-b8ed52d2ca2d5f6ae37454a137c87208.mp3str"
+
+[deps]
+
+source_file="res://assets/Voice Lines/Sheep.mp3"
+dest_files=["res://.godot/imported/Sheep.mp3-b8ed52d2ca2d5f6ae37454a137c87208.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
