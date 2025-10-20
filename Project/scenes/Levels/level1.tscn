@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bb38a43fmmpf1" path="res://assets/Backgrounds/balorbgdnew.png" id="2_wrr03"]
 [ext_resource type="Script" uid="uid://deece2n3be13j" path="res://scripts/camera_2d.gd" id="4_jyhfs"]
-[ext_resource type="Script" path="res://scripts/toggle.gd" id="4_wrr03"]
+[ext_resource type="Script" uid="uid://b1ynydlgqgu7r" path="res://scripts/toggle.gd" id="4_wrr03"]
 [ext_resource type="Script" uid="uid://ui7mqm2fu84" path="res://scripts/superobject.gd" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://uo6dv83abgou" path="res://scenes/object.tscn" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://brenn3fwld7yc" path="res://assets/Character Sprites/balor.webp" id="8_wi0rn"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://csmsliywm7i8x" path="res://assets/inventoryopen.png" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://d1dpqgf6k35ic" path="res://scripts/inventory_button.gd" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://du30dojv7fowx" path="res://scenes/inventory.tscn" id="11_ya4ey"]
-[ext_resource type="Script" path="res://scenes/portal.gd" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://pjnd033clubd" path="res://scenes/portal.gd" id="14_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://bej7c80y6wiqs" path="res://assets/Voice Lines/Knife.mp3" id="14_kkn4f"]
 [ext_resource type="Texture2D" uid="uid://bjn8vq77vft6i" path="res://assets/Portal.png" id="15_jbj1t"]
 [ext_resource type="AudioStream" uid="uid://dwdk5uesa0fa2" path="res://assets/Voice Lines/Rope.mp3" id="15_rwssm"]
@@ -122,15 +122,6 @@ size = Vector2(407, 646)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o6xl0")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 122.0
-offset_top = -94.0
-offset_right = 2482.0
-offset_bottom = 1546.0
-mouse_filter = 2
-texture = ExtResource("2_wrr03")
-metadata/_edit_use_anchors_ = true
 
 [node name="CameraManager" type="Node2D" parent="."]
 script = ExtResource("4_jyhfs")
@@ -246,6 +237,11 @@ stream = ExtResource("18_dp3eg")
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_muem4")
 volume_db = -14.991
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wrr03")
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]

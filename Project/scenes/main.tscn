@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4fqslm2xrywm" path="res://assets/mainmenubackground.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://d1y7di8infjgp" path="res://assets/button.png" id="2_0wfyh"]
-[ext_resource type="Script" path="res://scenes/play_button.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://dgxfaxy3i76ub" path="res://scenes/play_button.gd" id="3_sugp2"]
 [ext_resource type="FontFile" uid="uid://th8xae6784mc" path="res://assets/IrishGrover-Regular.ttf" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://dd7mnc5mrmwkw" path="res://assets/good click.mp3" id="17_muem4"]
 
