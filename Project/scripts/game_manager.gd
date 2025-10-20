@@ -11,3 +11,4 @@ func change_level():
 	else:
 		next_level_path = PATH_START + "End.tscn"
 	get_tree().change_scene_to_file(next_level_path)
+	GameState.reset()

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxr16h1jurrc0"
+path="res://.godot/imported/credits.dialogue-398fbf245d9748b0c205154ce4a9549a.tres"
+
+[deps]
+
+source_file="res://credits.dialogue"
+dest_files=["res://.godot/imported/credits.dialogue-398fbf245d9748b0c205154ce4a9549a.tres"]
+
+[params]
+
+defaults=true

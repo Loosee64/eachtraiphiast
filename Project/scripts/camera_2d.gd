@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 
 func _process(_float) -> void:
 		global_position.x += movement
-		global_position.x = clamp(global_position.x, 0, 500)
+		global_position.x = clamp(global_position.x, 0, 900)
 
 
 func _on_toggle_local_hide() -> void:

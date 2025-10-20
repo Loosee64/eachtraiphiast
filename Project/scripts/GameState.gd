@@ -1,24 +1,29 @@
 extends Node
-@onready var correct_object_audio: AudioStreamPlayer = $"/root/Node2D/Sound Buffers/Object1AudioBuffer"
-@onready var portal: Area2D = $"/root/Node2D/Portal"
-@onready var toggle: Button = $"/root/Node2D/Toggle"
-@onready var win_sound: AudioStreamPlayer = $"/root/Node2D/Win Sound"
+signal play_correct_audio
+signal show_portal
+signal set_toggle_off
+signal play_win_sound
 
 var itemUsed = false
 var itemFound = false
 var spoken_to = false
 
+func reset():
+	itemFound = false
+	itemUsed = false
+	spoken_to = false
+
 func object_sound():
-	correct_object_audio.play()
+	play_correct_audio.emit()
 
 func set_spoken_to():
 	spoken_to = true
 
 func set_portal():
-	portal.show()
+	show_portal.emit()
 
 func set_toggle():
-	toggle.set_toggle_off()
+	set_toggle_off.emit()
 
 func win_sound_play():
-	win_sound.play()
+	play_win_sound.emit()

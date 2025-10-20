@@ -53,7 +53,6 @@ var mutation_cooldown: Timer = Timer.new()
 
 @onready var character_sprite: AnimatedSprite2D = $"../Character"
 @onready var phist_sprite: AnimatedSprite2D = $Balloon/AnimatedSprite2D
-@onready var npc_sprite: AnimatedSprite2D = $"../Character"
 @onready var margin_container: MarginContainer = $Balloon/MarginContainer
 
 func _ready() -> void:
@@ -113,17 +112,17 @@ func apply_dialogue_line() -> void:
 	else:
 		margin_container.position.x = 600
 		if dialogue_line.get_tag_value("npcmood") == "angry":
-			npc_sprite.set_frame(0)
+			character_sprite.set_frame(0)
 		elif dialogue_line.get_tag_value("npcmood") == "shock":
-			npc_sprite.set_frame(1)
+			character_sprite.set_frame(1)
 		elif dialogue_line.get_tag_value("npcmood") == "happy":
-			npc_sprite.set_frame(2)
+			character_sprite.set_frame(2)
 		elif dialogue_line.get_tag_value("npcmood") == "stern":
-			npc_sprite.set_frame(3)
+			character_sprite.set_frame(3)
 		elif dialogue_line.get_tag_value("npcmood") == "blush":
-			npc_sprite.set_frame(4)
+			character_sprite.set_frame(4)
 		elif dialogue_line.get_tag_value("mnpcood") == "calm":
-			npc_sprite.set_frame(5) 
+			character_sprite.set_frame(5) 
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
