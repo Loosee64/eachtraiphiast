@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://du30dojv7fowx"]
+[gd_scene load_steps=13 format=3 uid="uid://du30dojv7fowx"]
 
 [ext_resource type="Texture2D" uid="uid://bgr8hc84hes26" path="res://assets/inventory.png" id="1_hj2ta"]
 [ext_resource type="Script" uid="uid://cx75bglugk6ht" path="res://scripts/inventory.gd" id="2_ty45s"]
 [ext_resource type="Script" uid="uid://hf1028ye74dy" path="res://scripts/inventoryobject.gd" id="3_ty45s"]
 [ext_resource type="Script" uid="uid://ds2crgkqus3he" path="res://scripts/play_sound.gd" id="4_uae8j"]
 [ext_resource type="Texture2D" uid="uid://b7t1oq3rmst1l" path="res://assets/audiosprite.png" id="4_yyk2a"]
-[ext_resource type="AudioStream" uid="uid://fthm17x2yb52" path="res://assets/Scian .mp3" id="5_uae8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53g1v"]
 size = Vector2(126.125, 132)
@@ -86,7 +85,6 @@ shape = SubResource("CircleShape2D_s887n")
 sprite_frames = SubResource("SpriteFrames_ylenm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object/PlaySound"]
-stream = ExtResource("5_uae8j")
 
 [node name="Object2" type="Area2D" parent="."]
 position = Vector2(-88, 150)
@@ -116,7 +114,6 @@ shape = SubResource("CircleShape2D_s887n")
 sprite_frames = SubResource("SpriteFrames_ylenm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object2/PlaySound"]
-stream = ExtResource("5_uae8j")
 
 [node name="Object3" type="Area2D" parent="."]
 position = Vector2(-84, 300)
@@ -146,7 +143,6 @@ shape = SubResource("CircleShape2D_s887n")
 sprite_frames = SubResource("SpriteFrames_ylenm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object3/PlaySound"]
-stream = ExtResource("5_uae8j")
 
 [node name="Object4" type="Area2D" parent="."]
 position = Vector2(-84, 441)
@@ -176,7 +172,6 @@ shape = SubResource("CircleShape2D_s887n")
 sprite_frames = SubResource("SpriteFrames_ylenm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object4/PlaySound"]
-stream = ExtResource("5_uae8j")
 
 [node name="Object5" type="Area2D" parent="."]
 position = Vector2(-84, 586)
@@ -206,7 +201,6 @@ shape = SubResource("CircleShape2D_s887n")
 sprite_frames = SubResource("SpriteFrames_ylenm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Object5/PlaySound"]
-stream = ExtResource("5_uae8j")
 
 [connection signal="item_picked" from="Object" to="Object/PlaySound" method="_on_object_item_picked"]
 [connection signal="item_used" from="Object" to="." method="_on_object_item_used"]

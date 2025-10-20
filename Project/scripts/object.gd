@@ -6,6 +6,8 @@ var objectID = -1
 @onready var sound_buffers: Node = $"../../Sound Buffers"
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var filepath: Label = $"../../Filepath"
+@onready var dialogue: CanvasLayer = $"../../Dialogue"
+@onready var dialogueBuffer: CanvasLayer = $"../../Dialogue"
 var dialogueResource
 
 func _ready() -> void:

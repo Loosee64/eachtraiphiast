@@ -23,6 +23,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://scripts/GameState.gd"
 GameManager="*res://scripts/game_manager.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="uid://dmhbi4o8yoxv0"
+
 [display]
 
 window/size/viewport_width=1920

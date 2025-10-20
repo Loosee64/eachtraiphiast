@@ -24,7 +24,7 @@ func _on_pressed() -> void:
 		character.show()
 		visibleUI = true
 		localShow.emit()
-		DialogueManager.show_dialogue_balloon_scene(dialogue, dialogueResource, "start")
+		DialogueManager.show_dialogue_balloon(dialogueResource, "start")
 
 func set_toggle_off():
 	character.hide()
