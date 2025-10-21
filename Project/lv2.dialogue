@@ -7,7 +7,8 @@ Phist: Huh? Ce ata ann?
 
 Puca: Who am i ? Who are you? I was here before you?  
 
-Phist: Dia duit, phist is ainm dom , I am making my way to the surface, can you help me?  Más é do thoil é. 
+Phist: Dia duit, phist is ainm dom , I am making my way to the surface.
+Phist: Can you help me?  Más é do thoil é. 
 
 Puca: Phist....phist ....phist... How can i trust you? 
 
@@ -17,11 +18,12 @@ Puca: Puca is ainm dom. cén fáth a bhfuil tú anseo?
 
 Phist: I am here to make my way to the serface. Please help me get to the next layer. 
 
-Puca:  Mmmmhhmmm help you? Help me first. I have lost something while causeing some trouble. Its time i return it. Aimsigh an Mhuc . Muc. That is what you are looking for, mo Chara. 
+Puca:  Mmmmhhmmm help you? Help me first. I have lost something while causing some trouble. 
+Puca:Its time i return it. Aimsigh an Mhuc . Muc. That is what you are looking for, mo Chara. 
 
 Phist: An Mhuc ...Muc.   
 
- Puca: Will you help me? 
+Puca: Will you help me? 
 
 - Yes
 	Phist: I accept. I won't let you down! [#mood=calm]
@@ -62,8 +64,8 @@ It is time for me to help you back.[#npcmood=shock]
 Phist: I am happy to help. [#mood=happy]
 
 Puca: Here is the portal to the next layer. 
-Go above and say *“tá sé cabhrach agus iontaofa”* and they will help.  
-Ádh mór agus slán leat.
+Puca: Go above and say *“tá sé cabhrach agus iontaofa”* and they will help.  
+Puca: Ádh mór agus slán leat.
 
 - Start again
 	=> start

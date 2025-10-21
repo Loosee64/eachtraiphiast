@@ -34,10 +34,10 @@ Balor: Will you accept this quest?[#npcmood=blush]
 if GameState.itemFound: # If item was found
 	Phist: I think I have found the scian, maybe I should show Balor. [#mood=happy]] 
 else: #Wrong items
-	%Phist: Is this it? [#mood=stern]
-	%Phist: Scian... I know what that is... I think?[#mood=calm]
-	%Phist: Ummmm... hmmmm... [#mood=angry]
-	%Phist: It’s creepy here... I’ve got to be brave![#mood=calm]
+	% Phist: Is this it? [#mood=stern]
+	% Phist: Scian... I know what that is... I think?[#mood=calm]
+	% Phist: Ummmm... hmmmm... [#mood=angry]
+	% Phist: It’s creepy here... I’ve got to be brave![#mood=calm]
 => END
 
 
