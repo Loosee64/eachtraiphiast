@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8a3ds2gifs3l"]
 
-[ext_resource type="Script" uid="uid://7q1munu5hnbl" path="res://scenes/Levels/opening.gd" id="1_nl0so"]
+[ext_resource type="Script" uid="uid://7q1munu5hnbl" path="res://scripts/opening.gd" id="1_nl0so"]
 [ext_resource type="Texture2D" uid="uid://h801j6wofeuf" path="res://assets/openingbackground.png" id="1_pelg4"]
 [ext_resource type="PackedScene" uid="uid://c7kmob5ac1c5x" path="res://scenes/Opening Text.tscn" id="2_nl0so"]
 

@@ -10,6 +10,6 @@ Will you begin the journey?
 ádh mór.  
 
 -no
-Come back when you are ready for an adventure. 
+Come back when you are ready for an adventure. [do! GameManager.change_level()]
 
 => END

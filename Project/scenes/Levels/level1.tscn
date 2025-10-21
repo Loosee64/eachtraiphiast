@@ -123,6 +123,11 @@ size = Vector2(407, 646)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o6xl0")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2880.0
+offset_bottom = 1080.0
+texture = ExtResource("2_wrr03")
+
 [node name="CameraManager" type="Node2D" parent="."]
 script = ExtResource("4_jyhfs")
 
@@ -209,10 +214,9 @@ offset_left = 1098.0
 offset_top = 2106.0
 offset_right = 1138.0
 offset_bottom = 2129.0
-text = "res://test.dialogue"
+text = "res://lv2.dialogue"
 
 [node name="Portal" type="Area2D" parent="."]
-visible = false
 position = Vector2(952, 477)
 script = ExtResource("14_jkv2x")
 
@@ -237,11 +241,6 @@ stream = ExtResource("18_dp3eg")
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_muem4")
 volume_db = -14.991
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_wrr03")
 
 [connection signal="localHide" from="Toggle" to="." method="_on_toggle_local_hide"]
 [connection signal="localHide" from="Toggle" to="CameraManager" method="_on_toggle_local_hide"]

@@ -1,7 +1,7 @@
 extends Node
 
-@onready var animation_buffer: AnimatedSprite2D = $"../../../Animation Buffer"
-@onready var sound_buffers: Node = $"../../../Sound Buffers"
+@onready var animation_buffer: AnimatedSprite2D = $"../Animation Buffer"
+@onready var sound_buffers: Node = $"../Sound Buffers"
 
 var inventoryArray = []
 var index = 0
