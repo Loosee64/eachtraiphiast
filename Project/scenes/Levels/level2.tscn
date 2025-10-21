@@ -171,19 +171,19 @@ skip_action = &"ui_accept"
 script = ExtResource("6_tipki")
 
 [node name="Object3" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(637, 1237)
+position = Vector2(943, 881)
 
 [node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(968, 460)
+position = Vector2(905, 398)
 
 [node name="Object2" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(371, 786)
+position = Vector2(270, 561)
 
 [node name="Object4" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(2084, 347)
+position = Vector2(2056, 295)
 
 [node name="Object5" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(2286, 889)
+position = Vector2(2631, 601)
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
 visible = false

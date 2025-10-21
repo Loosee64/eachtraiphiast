@@ -127,6 +127,7 @@ script = ExtResource("1_o6xl0")
 offset_right = 2880.0
 offset_bottom = 1080.0
 texture = ExtResource("2_wrr03")
+stretch_mode = 4
 
 [node name="CameraManager" type="Node2D" parent="."]
 script = ExtResource("4_jyhfs")
@@ -170,19 +171,19 @@ skip_action = &"ui_accept"
 script = ExtResource("6_tipki")
 
 [node name="Object3" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(2032, 967)
+position = Vector2(1904, 722)
 
 [node name="Object" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(2672, 531)
+position = Vector2(2552, 394)
 
 [node name="Object2" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(1423, 491)
+position = Vector2(1315, 460)
 
 [node name="Object4" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(770, 1366)
+position = Vector2(870, 932)
 
 [node name="Object5" parent="Objects" instance=ExtResource("8_tipki")]
-position = Vector2(329, 572)
+position = Vector2(260, 466)
 
 [node name="Character" type="AnimatedSprite2D" parent="."]
 visible = false
