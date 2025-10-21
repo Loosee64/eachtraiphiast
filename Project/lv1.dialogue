@@ -50,7 +50,8 @@ Phist: I think I am ready to show Balor.
 	Phist: Maybe I should search a bit more... [#mood=calm]
 	[do!GameState.set_toggle()]
 	=> END
-- Let me check my bag
+- Let me check my bag 
+	Phist: I should show him what I have [do! GameState.inventory_open()]
 	=> item_ready
 
 

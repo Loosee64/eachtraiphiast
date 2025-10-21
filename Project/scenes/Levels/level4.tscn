@@ -1,7 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://iqm2pi3wjnws"]
+[gd_scene load_steps=37 format=3 uid="uid://iqm2pi3wjnws"]
 
 [ext_resource type="Script" uid="uid://b8fdecxsbgnkt" path="res://scripts/main.gd" id="1_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://umsi00gjb2ej" path="res://assets/Backgrounds/SelkieBgd.webp" id="2_tu0hg"]
 [ext_resource type="Script" uid="uid://deece2n3be13j" path="res://scripts/camera_2d.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://b1ynydlgqgu7r" path="res://scripts/toggle.gd" id="4_wrr03"]
 [ext_resource type="Script" uid="uid://ui7mqm2fu84" path="res://scripts/superobject.gd" id="6_tipki"]
@@ -124,13 +123,8 @@ size = Vector2(407, 646)
 script = ExtResource("1_o6xl0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 122.0
-offset_top = -94.0
-offset_right = 2482.0
-offset_bottom = 1546.0
-mouse_filter = 2
-texture = ExtResource("2_tu0hg")
-metadata/_edit_use_anchors_ = true
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CameraManager" type="Node2D" parent="."]
 script = ExtResource("4_jyhfs")

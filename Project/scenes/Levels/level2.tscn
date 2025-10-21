@@ -124,13 +124,10 @@ size = Vector2(407, 646)
 script = ExtResource("1_o6xl0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 122.0
-offset_top = -94.0
-offset_right = 2482.0
-offset_bottom = 1546.0
-mouse_filter = 2
+offset_right = 2862.0
+offset_bottom = 1378.0
 texture = ExtResource("2_togeb")
-metadata/_edit_use_anchors_ = true
+stretch_mode = 4
 
 [node name="CameraManager" type="Node2D" parent="."]
 script = ExtResource("4_jyhfs")

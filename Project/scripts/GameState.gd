@@ -3,6 +3,7 @@ signal play_correct_audio
 signal show_portal
 signal set_toggle_off
 signal play_win_sound
+signal open_inventory
 
 var itemUsed = false
 var itemFound = false
@@ -27,3 +28,6 @@ func set_toggle():
 
 func win_sound_play():
 	play_win_sound.emit()
+
+func inventory_open():
+	open_inventory.emit()
