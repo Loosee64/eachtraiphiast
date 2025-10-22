@@ -1,75 +1,86 @@
 ~ start
-Phist: [[Hi|Hello|Dia duit]]  [#mood=stern]
+if GameState.spoken_to == true and GameState.itemFound == false: #If spoken to already but no correct item
+	=> what_item
+elif GameState.spoken_to == true and GameState.itemFound == true: #If spoken to and have correct item
+	=> item_ready
+
+Phiast: Dia duit [#mood=stern]
 
 Puca: Heeeeeheheeeeee  [#npcmood=calm]
 
-Phist: Huh? Ce ata ann? 
+Phiast: Huh? Ce ata ann? 
 
-Puca: Who am i ? Who are you? I was here before you?  
+Puca: Who am i ? Who are you? I was here before you?  [#npcmood=stern]
 
-Phist: Dia duit, phist is ainm dom , I am making my way to the surface.
-Phist: Can you help me?  Más é do thoil é. 
+Phiast: Dia duit, Phiast is ainm dom , I am making my way to the surface. [#mood=happy]
+Phiast: Can you help me?  Más é do thoil é. 
 
-Puca: Phist....phist ....phist... How can i trust you? 
+Puca: Phiast....Phiast ....Phiast... How can i trust you? [#npcmood=angry]
 
-Phist: The Balor told me to say "bhí sé ina chara maith agam"
+Phiast: The Balor told me to say "bhí sé ina chara maith agam"
 
-Puca: Puca is ainm dom. cén fáth a bhfuil tú anseo? 
+Puca: Puca is ainm dom. cén fáth a bhfuil tú anseo? [#npcmood=happy]
 
-Phist: I am here to make my way to the serface. Please help me get to the next layer. 
+Phiast: I am here to make my way to the surface. Please help me get to the next layer. [do! GameState.set_spoken_to()]
+=> what_item
 
-Puca:  Mmmmhhmmm help you? Help me first. I have lost something while causing some trouble. 
-Puca:Its time i return it. Aimsigh an Mhuc . Muc. That is what you are looking for, mo Chara. 
+~ what_item
+Puca:  Mmmmhhmmm help you? Help me first. 
+Puca: I have lost something while causing some trouble. 
+Puca: Its time i return it. Aimsigh an Mhuc . Muc. 
+Puca: That is what you are looking for, mo Chara. 
 
-Phist: An Mhuc ...Muc.   
+Phiast: An Mhuc ...Muc.  [do! GameState.object_sound()] 
 
 Puca: Will you help me? 
 
 - Yes
-	Phist: I accept. I won't let you down! [#mood=calm]
-	Puca: ádh mór
-	=> searching
+	Phiast: I accept. I won't let you down! [#mood=calm]
+	Puca: ádh mór[do!GameState.set_toggle()]
+	=> END
 - No
-	Phist: No, I don't want to help. [#mood=angry]
-	Puca:This is the only way so come back when you realise. [#npcmood=happy]
+	Phiast: No, I don't want to help. [#mood=angry]
+	Puca:This is the only way so come back when you realise. [#npcmood=happy][do!GameState.set_toggle()]
 	=> END
 
 
 ~ searching
-Phist: [I don' know. [#mood=stern]|Maybe this is right[#mood=calm]|Is this a muc?[#mood=angry]|This isn't rightt...maybe...[#mood=calm]This is a Muc ,  i am sure...mostly   [#mood=happy]] 
+if GameState.itemFound: # If item was found
+	Phiast: This is a Muc ,  i am sure...mostly   [#mood=happy]
+else: #Wrong items
+	% Phiast: I don' know. [#mood=stern]
+	% Phiast: Maybe this is right[#mood=calm]
+	% Phiast: Is this a muc?[#mood=angry]
+	% Phiast: This isn't rightt...maybe...[#mood=calm]
+=> END
 
-Phist: I think I am ready to show the Puca.
+~ item_ready
+Phiast: I think I am ready to show the Puca.
 
-- Yes
+- Yes [if GameState.itemUsed]
 	=> found_muc
 - No
-	Phist: I need more time to think.[#mood=calm]
-	=> searching
-- Start again
-	=> start
-- End the conversation
+	Phiast: I need more time to think.[#mood=calm]
+	[do!GameState.set_toggle()]
 	=> END
-
+- Let me check my bag 
+	Phiast: I should show him what I have [do! GameState.inventory_open()]
+	=> item_ready
 
 ~ found_muc
-Phist:I think I have it. [#mood=happy]
+Phiast: I think I have it. [#mood=happy]
 
 Puca: Let's see if you are right.[#npcmood=angry]
 
-Phist: Here it is. [#mood=blush]
+Phiast: Here it is. [#mood=blush]
 
-Puca:Thats it — *muc an fheirmeora*. Go raibh maith agat.[#npcmood=stern]  
-It is time for me to help you back.[#npcmood=shock]
+Puca: Thats it — *muc an fheirmeora*. Go raibh maith agat.[#npcmood=stern]  
+Puca: It is time for me to help you back.[#npcmood=shock]
 
-Phist: I am happy to help. [#mood=happy]
+Phiast: I am happy to help. [#mood=happy]
 
 Puca: Here is the portal to the next layer. 
 Puca: Go above and say *“tá sé cabhrach agus iontaofa”* and they will help.  
-Puca: Ádh mór agus slán leat.
-
-- Start again
-	=> start
-- End the conversation
-	=> END
+Puca: Ádh mór agus slán leat. [do! GameState.set_portal()][do!GameState.set_toggle()][do!GameState.win_sound_play()]
 
 => END

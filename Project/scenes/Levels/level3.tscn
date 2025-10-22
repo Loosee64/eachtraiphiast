@@ -217,7 +217,7 @@ offset_left = 1098.0
 offset_top = 2106.0
 offset_right = 1138.0
 offset_bottom = 2129.0
-text = "res://test.dialogue"
+text = "res://lv1.dialogue"
 
 [node name="Portal" type="Area2D" parent="."]
 visible = false

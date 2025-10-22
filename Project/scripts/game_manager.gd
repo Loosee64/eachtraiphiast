@@ -14,11 +14,16 @@ func change_level():
 		if next_level_num < 5:
 			next_level_path = PATH_START + str(next_level_num) + ".tscn"
 		else:
-			next_level_path = "res://scenes/Levels/credits.tscn"
+			next_level_path = "res://scenes/Levels/ending.tscn"
 	get_tree().change_scene_to_file(next_level_path)
 	GameState.reset()
 
 func title_screen():
 	next_level_path = "res://scenes/main.tscn"
+	get_tree().change_scene_to_file(next_level_path)
+	GameState.reset()
+
+func credits():
+	next_level_path = "res://scenes/Levels/credits.tscn"
 	get_tree().change_scene_to_file(next_level_path)
 	GameState.reset()

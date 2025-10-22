@@ -52,7 +52,7 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 @onready var character_sprite: AnimatedSprite2D = $"../Character"
-@onready var phist_sprite: AnimatedSprite2D = $Balloon/AnimatedSprite2D
+@onready var phiast_sprite: AnimatedSprite2D = $Balloon/AnimatedSprite2D
 @onready var margin_container: MarginContainer = $Balloon/MarginContainer
 
 func _ready() -> void:
@@ -95,22 +95,23 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	if dialogue_line.character.to_lower() == "phist":
+	if dialogue_line.character.to_lower() == "phiast":
 		margin_container.position.x = 0
 		if dialogue_line.get_tag_value("mood") == "angry":
-			phist_sprite.set_frame(0)
+			phiast_sprite.set_frame(0)
 		elif dialogue_line.get_tag_value("mood") == "shock":
-			phist_sprite.set_frame(1)
+			phiast_sprite.set_frame(1)
 		elif dialogue_line.get_tag_value("mood") == "happy":
-			phist_sprite.set_frame(2)
+			phiast_sprite.set_frame(2)
 		elif dialogue_line.get_tag_value("mood") == "stern":
-			phist_sprite.set_frame(3)
+			phiast_sprite.set_frame(3)
 		elif dialogue_line.get_tag_value("mood") == "blush":
-			phist_sprite.set_frame(4)
+			phiast_sprite.set_frame(4)
 		elif dialogue_line.get_tag_value("mood") == "calm":
-			phist_sprite.set_frame(5) 
+			phiast_sprite.set_frame(5) 
 	else:
 		margin_container.position.x = 600
+		character_sprite.show()
 		if dialogue_line.get_tag_value("npcmood") == "angry":
 			character_sprite.set_frame(0)
 		elif dialogue_line.get_tag_value("npcmood") == "shock":
@@ -135,7 +136,6 @@ func apply_dialogue_line() -> void:
 	will_hide_balloon = false
 
 	dialogue_label.show()
-	character_sprite.show()
 	if not dialogue_line.text.is_empty():
 		dialogue_label.type_out()
 		await dialogue_label.finished_typing

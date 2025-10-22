@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctt87sgbqxsly"]
+
+[ext_resource type="Texture2D" uid="uid://bareegpn420ya" path="res://assets/gameend.webp" id="1_ge3nb"]
+[ext_resource type="Script" uid="uid://b7gon4r2x7dpp" path="res://scenes/Levels/ending.gd" id="1_wmk31"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wmk31")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1924.0
+offset_bottom = 1084.0
+texture = ExtResource("1_ge3nb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(957, 542)
+scale = Vector2(0.373616, 2.00344)

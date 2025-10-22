@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dmhbi4o8yoxv0"]
+[gd_scene load_steps=21 format=3 uid="uid://dmhbi4o8yoxv0"]
 
 [ext_resource type="Script" uid="uid://bkmjtyf1eih2o" path="res://scripts/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://th8xae6784mc" path="res://assets/IrishGrover-Regular.ttf" id="3_i80d5"]
 [ext_resource type="Texture2D" uid="uid://v38a2gkvuly4" path="res://assets/Phiast Box.png" id="3_m0o5a"]
 [ext_resource type="Texture2D" uid="uid://b3espdhikp54q" path="res://assets/phist.webp" id="3_u045a"]
 
@@ -66,9 +67,11 @@ MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
 [sub_resource type="Theme" id="Theme_i80d5"]
+default_font = ExtResource("3_i80d5")
 default_font_size = 25
 
 [sub_resource type="Theme" id="Theme_m0o5a"]
+default_font = ExtResource("3_i80d5")
 default_font_size = 40
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsek3"]

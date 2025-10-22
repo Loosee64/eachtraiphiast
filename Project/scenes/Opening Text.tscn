@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7kmob5ac1c5x"]
+[gd_scene load_steps=13 format=3 uid="uid://c7kmob5ac1c5x"]
 
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://brh83egrju4n" path="res://assets/openingbook.png" id="2_f8mxf"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://th8xae6784mc" path="res://assets/IrishGrover-Regular.ttf" id="3_f8mxf"]
 
 [sub_resource type="GDScript" id="GDScript_kmog0"]
 script/source = "extends CanvasLayer
@@ -242,6 +243,13 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="Theme" id="Theme_x7p3g"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_lw65d"]
+default_font = ExtResource("3_f8mxf")
+default_font_size = 60
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = SubResource("GDScript_kmog0")
@@ -280,6 +288,7 @@ offset_top = 117.0
 offset_right = 2340.0
 offset_bottom = 145.0
 mouse_filter = 1
+theme = SubResource("Theme_x7p3g")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -295,6 +304,7 @@ offset_top = 172.0
 offset_right = 1461.0
 offset_bottom = 930.0
 size_flags_vertical = 3
+theme = SubResource("Theme_lw65d")
 text = "Dialogue..."
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]

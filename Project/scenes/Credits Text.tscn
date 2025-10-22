@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c62ex12xe1dq"]
+[gd_scene load_steps=12 format=3 uid="uid://c62ex12xe1dq"]
 
+[ext_resource type="FontFile" uid="uid://th8xae6784mc" path="res://assets/IrishGrover-Regular.ttf" id="1_qsu3s"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -241,6 +242,14 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="Theme" id="Theme_ntymq"]
+default_font = ExtResource("1_qsu3s")
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_yt1vk"]
+default_font = ExtResource("1_qsu3s")
+default_font_size = 50
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = SubResource("GDScript_kmog0")
@@ -270,11 +279,12 @@ grow_vertical = 0
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/Node"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
-offset_left = 296.0
-offset_top = 124.0
-offset_right = 2156.0
-offset_bottom = 313.0
+offset_left = 673.0
+offset_top = -3.0
+offset_right = 2533.0
+offset_bottom = 186.0
 mouse_filter = 1
+theme = SubResource("Theme_ntymq")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -284,12 +294,13 @@ scroll_active = false
 unique_name_in_owner = true
 anchors_preset = 0
 anchor_right = 0.0
-offset_left = 304.0
-offset_top = 336.0
-offset_right = 2164.0
-offset_bottom = 525.0
+offset_left = 683.0
+offset_top = 301.0
+offset_right = 2543.0
+offset_bottom = 490.0
 grow_horizontal = 1
 size_flags_vertical = 3
+theme = SubResource("Theme_yt1vk")
 text = "Dialogue..."
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
