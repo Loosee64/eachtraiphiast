@@ -17,3 +17,8 @@ func change_level():
 			next_level_path = "res://scenes/Levels/credits.tscn"
 	get_tree().change_scene_to_file(next_level_path)
 	GameState.reset()
+
+func title_screen():
+	next_level_path = "res://scenes/main.tscn"
+	get_tree().change_scene_to_file(next_level_path)
+	GameState.reset()
